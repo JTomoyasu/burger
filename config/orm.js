@@ -1,5 +1,5 @@
 var connection = require("./connection.js");
-var tableName = "burgers_db";
+var tableName = "burgers";
 var orm = {
     selectAll: function (callback) {
         var s = "SELECT * FROM " + tableName;

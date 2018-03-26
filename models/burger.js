@@ -6,12 +6,12 @@ var burger = {
             cb(res);
         });
     },
-    create: function (cb) {
+    create: function (burg, cb) {
         orm.insertOne(burg, function (res) {
             cb(res);
         });
     },
-    update: function (cb) {
+    update: function (name,condition,cb) {
         orm.updateOne(name, condition, function (res) {
             cb(res);
         });
