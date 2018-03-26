@@ -18,6 +18,7 @@
             var newDevouredState = {
                 devoured: 1
             };
+            console.log(newDevouredState);
             $.ajax("/api/burgers/" + id, {
                 type: "PUT",
                 data: newDevouredState
