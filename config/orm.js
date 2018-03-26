@@ -16,7 +16,7 @@ var orm = {
     },
     updateOne: function (condition,callback) {
         var s = "UPDATE " + tableName + " SET devoured = ? WHERE ?";
-        console.log(s, condition);
+        console.log(s, condition, "orm");
         connection.query(s, [1, condition], function (
             err,
             result
