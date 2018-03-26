@@ -8,19 +8,16 @@ var orm = {
         });
     },
     insertOne: function (burger, callback) {
-        var s = "INSERT INTO " + tableName + " (burger_name, devoured) VALUES (?,?)";
-
-        connection.query(s, [burger.burger_name, burger.devoured], function (
-            err,
-            result
-        ) {
+        var s = "INSERT INTO " + tableName + " (burger_name, devoured) VALUES (?, ?)";
+        console.log(burger);
+        connection.query(s, [burger.burger_name, burger.devoured], function (err,result) {
             callback(result);
         });
     },
-    updateOne: function (name, condition,callback) {
-        var s = "UPDATE " + tableName + " SET devoured = ? WHERE burger_name = name";
-
-        connection.query(s, [condition], function (
+    updateOne: function (condition,callback) {
+        var s = "UPDATE " + tableName + " SET devoured = ? WHERE ?";
+        console.log(s, condition);
+        connection.query(s, [1, condition], function (
             err,
             result
         ) {

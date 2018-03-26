@@ -16,7 +16,7 @@
         $(".change-devoured").on("click", function (event) {
             var id = $(this).data("id");
             var newDevouredState = {
-                devoured: 0
+                devoured: 1
             };
             $.ajax("/api/burgers/" + id, {
                 type: "PUT",
