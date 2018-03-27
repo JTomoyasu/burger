@@ -18,13 +18,11 @@
             var newDevouredState = {
                 devoured: 1
             };
-            console.log(id,newDevouredState,"main");
             $.ajax("/api/burgers/" + id, {
                 type: "PUT",
                 data: newDevouredState
             }).then(
                 function () {
-                    console.log("did it")
                     location.reload();
                 }
             );

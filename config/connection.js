@@ -3,7 +3,7 @@ if(process.env.NODE_ENV!=="production"){
   require("dotenv").load();
 }
 
-// Set up our connection information
+
 var connection = mysql.createConnection({
   port: 3306,
   host: process.env.DB_HOST,
@@ -12,7 +12,7 @@ var connection = mysql.createConnection({
   database: process.env.DB_SCHEMA
 });
 
-// Connect to the database
+
 connection.connect(function(err) {
   if (err) {
     console.error("error connecting: " + err.stack);

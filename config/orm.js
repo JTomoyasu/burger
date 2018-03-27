@@ -9,15 +9,13 @@ var orm = {
     },
     insertOne: function (burger, callback) {
         var s = "INSERT INTO " + tableName + " (burger_name, devoured) VALUES (?, ?)";
-        console.log(burger);
         connection.query(s, [burger.burger_name, burger.devoured], function (err,result) {
             callback(result);
         });
     },
     updateOne: function (condition,callback) {
-        var s = "UPDATE " + tableName + " SET devoured = ? WHERE ?";
-        console.log(s, condition, "orm");
-        connection.query(s, [1, condition], function (
+        var s = "UPDATE " + tableName + " SET devoured = 1 WHERE "+condition;
+        connection.query(s, [], function (
             err,
             result
         ) {
